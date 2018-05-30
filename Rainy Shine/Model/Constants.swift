@@ -7,6 +7,7 @@
 //
 
 import Foundation
+//goi API
 let BASE_URL = "http://samples.openweathermap.org/data/2.5/weather?"
 let LATITUDE = "lat="
 let LONGITUDE = "&lon="

@@ -18,8 +18,8 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
     @IBOutlet weak var currentWeatherTypeLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
-    let locationManager = CLLocationManager()
-    var currentLocation: CLLocation!
+    let locationManager = CLLocationManager() //bat dau va ket thuc phan phoi cac su kien
+    var currentLocation: CLLocation! //thong tin vi do, kinh do duoc khai bao
     
     var currentWeather: CurrentWeather!
     var forecast: Forecast!
@@ -29,9 +29,9 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
         super.viewDidLoad()
         
         locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startMonitoringSignificantLocationChanges()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest //do chinh xac cua vi tri
+        locationManager.requestWhenInUseAuthorization() //yeu cau quyen su dung dich vu dinh vi
+        locationManager.startMonitoringSignificantLocationChanges() //tao ra cac ban cap nhat khi co su thay doi ve vi tri
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -44,17 +44,17 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
         locationAuthStatus()
     }
     func locationAuthStatus() {
-        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse { //tra ve gia tri cho biet ung dung co duoc phep ghi du lieu cam bien ko
             currentLocation = locationManager.location
-            Location.sharedInstance.latitude = currentLocation.coordinate.latitude
-            Location.sharedInstance.longitude = currentLocation.coordinate.longitude
+            Location.sharedInstance.latitude = currentLocation.coordinate.latitude //kinh do
+            Location.sharedInstance.longitude = currentLocation.coordinate.longitude //vi do
             currentWeather.downloadWeatherDetails {
                 self.downloadForecastData {
-                    self.updateMainUI()
+                    self.updateMainUI() //sau khi co du lieu cua cac ngay tiep theo thi cap nhat UI
                 }
             }
         } else {
-            locationManager.requestWhenInUseAuthorization()
+            locationManager.requestWhenInUseAuthorization() //yeu cau quyen su dung
             locationAuthStatus()
         }
     }
@@ -66,10 +66,10 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
             if let dict = result.value as? Dictionary<String, AnyObject> {
                 if let list = dict["list"] as? [Dictionary<String, AnyObject>] {
                     for obj in list {
-                        let forecast = Forecast(weatherDict: obj)
-                        self.forecasts.append(forecast)
+                        let forecast = Forecast(weatherDict: obj) //khai bao bien du bao
+                        self.forecasts.append(forecast) //them vao list
                     }
-                    self.tableView.reloadData()
+                    self.tableView.reloadData() //goi doi tuong reload
                 }
             }
             completed ()
@@ -97,6 +97,7 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
     }
     
     func updateMainUI () {
+        //label cac truong gan vao du lieu da down o trong lop currentWeather
         dateLabel.text = currentWeather.date
         currentTempLabel.text = "\(currentWeather.currentTemp)"
         currentWeatherTypeLabel.text = currentWeather.weatherType

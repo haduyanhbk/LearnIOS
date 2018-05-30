@@ -37,11 +37,11 @@
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rf7-7d-AeQ" userLabel="currentTempLabel">
                                                         <rect key="frame" x="0.0" y="88.5" width="177.5" height="89"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="58"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="55"/>
                                                         <color key="textColor" red="0.97554687234582671" green="1" blue="0.98837385797931732" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YFI-s2-jt3" userLabel="locationLabel">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YFI-s2-jt3" userLabel="locationLabel">
                                                         <rect key="frame" x="0.0" y="177.5" width="177.5" height="88.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                         <color key="textColor" red="0.97554687230000003" green="1" blue="0.98837385799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -58,10 +58,10 @@
                                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="PyA-Ua-ht8">
                                                 <rect key="frame" x="177.5" y="0.0" width="177.5" height="266"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wi4-nN-Uf0" userLabel="currentWeatherImage">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wi4-nN-Uf0" userLabel="currentWeatherImage">
                                                         <rect key="frame" x="22.5" y="0.0" width="133" height="133"/>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0r-5m-d6p" userLabel="currentWeatherTypeLabel">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0r-5m-d6p" userLabel="currentWeatherTypeLabel">
                                                         <rect key="frame" x="0.0" y="133" width="177.5" height="133"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                         <color key="textColor" red="0.97554687230000003" green="1" blue="0.98837385799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

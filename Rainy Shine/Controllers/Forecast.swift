@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 
 class Forecast {
+    //danh sach hien thi trong viewcell
     var _date: String!
     var _weatherType: String!
     var _lowTemp: String!

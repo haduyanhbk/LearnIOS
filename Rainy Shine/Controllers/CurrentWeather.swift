@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 
 class CurrentWeather {
+//    khai báo các biến trong stackView
     var _cityName: String!
     var _date: String!
     var _weatherType: String!
@@ -19,9 +20,11 @@ class CurrentWeather {
         if _date == nil {
             _date = ""
         }
+        //dinh dang chuyen doi giua cac ngay
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .long
         dateFormatter.timeStyle = .none
+        
         let currentDate = dateFormatter.string(from: Date())
         self._date = "Today, \(currentDate)"
         return _date
@@ -38,13 +41,13 @@ class CurrentWeather {
         }
         return _cityName
     }
-    var currentTemp: Double {
+    var currentTemp: Double { //luu y kieu du lieu cua bien
         if _currentTemp == nil {
             _currentTemp = 0.0
         }
         return _currentTemp
     }
-    func downloadWeatherDetails(completed: @escaping DownloadComplete) {
+    func downloadWeatherDetails(completed: @escaping DownloadComplete) { //download du lieu chi tiet tu API duoc goi trong ham DownloadComplete
         //Alamofire download
         print(CURRENT_WEATHER_URL)
         print(self ._weatherType)
@@ -53,8 +56,8 @@ class CurrentWeather {
             let result = response.result
             
             if let dict = result.value as? Dictionary<String, AnyObject> {
-                if let name = dict["name"] as? String {
-                    self._cityName = name.capitalized
+                if let name = dict["name"] as? String { //chap nhan nil
+                    self._cityName = name.capitalized //bieu dien viet hoa
                     print(self._cityName)
                 }
 
